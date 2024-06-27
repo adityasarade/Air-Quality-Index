@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign up - Air Quality Index Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 18px;
+        }
+        input[type="text"], input[type="password"], input[type="submit"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .attribution {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+        .aqi-link {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .aqi-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Login</h1>
+        <h2>for Air Quality Index Checker</h2>
+
+        <form action="http://127.0.0.1:8000/basepage/" method="post">
+            {% csrf_token  %}
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="checkbox" id="rememberme" name="rememberme">
+            <label for="rememberme">Remember me</label><br>
+            <input type="submit" value="Login">
+        </form>
+        <p>Don't have an account? <a href="http://127.0.0.1:8000/signuppage/">Sign up</a></p>
+        <a href="aqi_checker.php" class="aqi-link">Check Air Quality Index</a>
+        <p class="attribution">AQI data provided by [Sarade and Bhosale Girls]</p>
+        {% if login_page %}
+        <p id="loginFailedMessage" style="color: red; text-align: center;">{{ login_page }}</p>
+    {% endif %}
+        <script>
+            // Check if the login failed message exists
+            var loginFailedMessage = document.getElementById("loginFailedMessage");
+            if (loginFailedMessage) {
+                // If it exists, set a timeout to hide it after 2 seconds
+                setTimeout(function() {
+                    loginFailedMessage.style.display = "none";
+                }, 2000);
+            }
+        </script>
+    </div>
+</body>
+</html>

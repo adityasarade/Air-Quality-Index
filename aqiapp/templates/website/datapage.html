@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Page</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Data for City: {{ aqi_data.city_name }}</h2>
+    <table> 
+        <tr>
+            <th>Air Quality</th>
+            <th>Air Quality Index</th>
+        </tr>
+        <tr>
+            <td>The Air Quality is: {{ aqi_data.air_quality }}</td>
+            <td>Air Quality Index: {{ aqi_data.air_quality_index }}</td>
+        </tr>
+    </table>
+</body>
+</html>

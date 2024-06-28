@@ -15,7 +15,7 @@ def insertuser(request):
     vemail=request.POST['email']
     vusername=request.POST['username']
     vpassword = request.POST['password']
-    us=User(username=vusername,password=vpassword,email=vemail)
+    us=User.objects.create_user(username=vusername,password=vpassword,email=vemail)
     us.save()
     return HttpResponse("Signup Successfull !!")
     

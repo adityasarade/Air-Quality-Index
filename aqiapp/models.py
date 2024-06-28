@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 class User(models.Model):
@@ -11,8 +10,6 @@ class User(models.Model):
         db_table = 'signup'
 
 
-
-        
 
 class cityairquality(models.Model):
     city_name = models.CharField(max_length=100)

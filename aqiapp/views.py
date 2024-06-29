@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 
 def loginpage(request):
@@ -46,5 +47,11 @@ def retrievedata(request):
         return render(request, 'website/datapage.html', {'aqi_data': aqi_data})
     else:
         return render(request, 'website/basepage.html')
+    
+from django.shortcuts import render
+
+def index(request):
+    return render(request, 'website/homepage.html')
+
     
 

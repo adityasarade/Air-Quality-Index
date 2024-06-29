@@ -83,7 +83,7 @@
             <input type="submit" value="Login">
         </form>
         <p>Don't have an account? <a href="http://127.0.0.1:8000/signuppage/">Sign up</a></p>
-        <a href="{%url 'index'%}" class="aqi-link">Return to home page</a>
+        <a href="{%url 'home'%}" class="aqi-link">Return to home page</a>
         <p class="attribution">AQI data provided by [Aditya Sarade]</p>
         {% if login_page %}
         <p id="loginFailedMessage" style="color: red; text-align: center;">{{ login_page }}</p>

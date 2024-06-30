@@ -5,17 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Page</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #283747;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            color: white; /* Changed to white for better readability */
+        }
+        h2 {
+            color: #ffffff; /* Changed to white for better visibility against the blue background */
+            margin-bottom: 20px;
+        }
         table {
             border-collapse: collapse;
-            width: 100%;
+            width: 80%;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         th, td {
             border: 1px solid #dddddd;
             text-align: left;
-            padding: 8px;
+            padding: 12px;
+            font-size: 16px;
+            color: #333; /* Changed to dark color for better readability against white background */
         }
         th {
+            background-color: #1a252f;
+            color: white;
+        }
+        tr:nth-child(even) {
             background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
         }
     </style>
 </head>
@@ -27,8 +54,8 @@
             <th>Air Quality Index</th>
         </tr>
         <tr>
-            <td>The Air Quality is: {{ aqi_data.air_quality }}</td>
-            <td>Air Quality Index: {{ aqi_data.air_quality_index }}</td>
+            <td>{{ aqi_data.air_quality }}</td>
+            <td>{{ aqi_data.air_quality_index }}</td>
         </tr>
     </table>
 </body>

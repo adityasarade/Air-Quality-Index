@@ -1,12 +1,16 @@
 from django.shortcuts import render, redirect
 from .models import cityairquality
 from django.http import HttpResponse, JsonResponse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login , logout
 from django.contrib.auth.models import User
 from django.views.decorators.http import require_GET
 import requests
 
 def loginpage(request):
+    return render(request, "website/loginpage.html")
+
+def logout_o(request):
+    logout(request)
     return render(request, "website/loginpage.html")
 
 def insertuser(request):
@@ -33,6 +37,7 @@ def base(request):
         else:
             message = "Please try again"
             return render(request, "website/loginpage.html", {'login_page': message})
+            
     return render(request, "website/loginpage.html")
 
 def retrievedata(request):

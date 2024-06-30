@@ -61,9 +61,10 @@
             margin-top: 20px;
             font-size: 14px;
             color: #283747;
-            text-decoration: none;
+            text-decoration: underline;
         }
         .aqi-link:hover {
+            color: #283747;
             text-decoration: underline;
         }
         .error {
@@ -89,7 +90,7 @@
             <input type="submit" value="Sign up">
         </form>
         <p>Already have an account? <a href="http://127.0.0.1:8000/loginpage/">Login</a></p>
-        <a href="aqi_checker.php" class="aqi-link">Check Air Quality Index</a>
+        <a href="{%url 'home'%}" class="aqi-link">Return to home page</a>
         <p class="attribution">AQI data provided by [Aditya Sarade]</p>
     </div>
 

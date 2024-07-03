@@ -12,6 +12,7 @@ urlpatterns = [
     path('insertuser/', views.insertuser, name='insertuser'),
     path('signuppage/', views.signup, name='signup'),
     path('basepage/', views.base, name='base'),
+    path('logout_o/', views.logout_o, name='logout'),
     path('basepage/aqi_result/', views.retrievedata, name='retrieve'),
 ]
 

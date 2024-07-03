@@ -54,7 +54,7 @@ def home(request):
 
 @require_GET
 def get_air_quality_news(request):
-    api_key = '597cd448fadd4977bee0bfb172871277'
+    api_key = 'your_api_key'
     url = f'https://newsapi.org/v2/everything?q=air%20quality%20OR%20climate%20OR%20weather%20OR%20pollution%20OR%20rain%20OR%20smoke%20OR%20temperature&sortBy=publishedAt&apiKey={api_key}'
     
     try:

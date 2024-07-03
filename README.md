@@ -20,10 +20,10 @@ The Air Quality Index (AQI) is a web application that provides users with real-t
 ### Steps
 1. **Clone the repository**
     ```bash
-    git clone https://github.com/your-username/aqi-management-system.git
+    git clone https://github.com/adityasarade/Aqi-Management-System.git
     ```
     ```bash
-    cd aqi-management-system
+    cd Aqi-Management-System
    ```
 
 2. **Install dependencies**
